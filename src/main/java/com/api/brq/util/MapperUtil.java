@@ -18,5 +18,4 @@ public class MapperUtil {
     public ModelMapper use(){
         return this.modelMapper;
     }
-
 }
