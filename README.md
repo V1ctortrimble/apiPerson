@@ -8,6 +8,8 @@ Crud de pessoas com GET, POST, PUT e DELETE.
 * Lombok
 * Swagger
 * PostgreSQL
+* Junit
+* Mockito
 
 ### **OBSERVAÇÃO**
 implementado swagger para documentar a API 
