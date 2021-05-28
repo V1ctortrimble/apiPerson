@@ -1,7 +1,7 @@
 # **API-Pessoas**
 Crud de pessoas com GET, POST, PUT e DELETE.
 
-### **Tacnologias Usadas**
+### **Tecnologias Usadas**
 * Java 8
 * SpringBoot Framework
 * JPA
