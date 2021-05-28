@@ -21,14 +21,6 @@ import java.util.List;
 public class PersonController {
 
     /**
-     * Contants
-     */
-    public static final String FAILED_TO_INSERT_NEW_PERSON = "Failed to Insert New Person!";
-    public static final String FAILED_TO_UPDATE_PERSON = "Failed to Update Person!";
-    public static final String FAILED_TO_GET_PERSON_BY_ID = "Failed to Get Person By Id!";
-    public static final String FAILED_TO_DELETE_PERSON_BY_ID = "Failed to Delete Person By Id!";
-
-    /**
      * Service
      */
     private final PersonService service;
@@ -52,7 +44,7 @@ public class PersonController {
         if (entity != null){
             return new ResponseEntity<>(converter.toDTO(entity), HttpStatus.OK);
         }
-        throw new Exception(FAILED_TO_GET_PERSON_BY_ID);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ApiOperation(value = "URL To Post Of Persons")
@@ -62,7 +54,7 @@ public class PersonController {
             service.postPerson(converter.toEntity(dto));
             return new ResponseEntity<>(dto, HttpStatus.OK);
         }
-        throw new Exception(FAILED_TO_INSERT_NEW_PERSON);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @ApiOperation(value = "URL To Put Of Person")
@@ -73,7 +65,7 @@ public class PersonController {
             service.postPerson(converter.toEntity(dto));
             return new ResponseEntity<>(dto, HttpStatus.OK);
         }
-        throw new Exception(FAILED_TO_UPDATE_PERSON);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ApiOperation(value = "URL To Delete Of Person")
@@ -84,6 +76,6 @@ public class PersonController {
             service.deletePersonById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }
-        throw new Exception(FAILED_TO_DELETE_PERSON_BY_ID);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
