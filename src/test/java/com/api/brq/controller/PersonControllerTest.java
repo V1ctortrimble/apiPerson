@@ -1,13 +1,11 @@
 package com.api.brq.controller;
 
 import com.api.brq.data.entity.PersonEntity;
-import com.api.brq.dto.PersonDTO;
 import com.api.brq.service.PersonService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
